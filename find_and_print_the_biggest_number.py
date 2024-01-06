@@ -20,11 +20,18 @@ def find_and_print_biggest_number():
             biggest_number = second_number
         else:
             biggest_number = third_number
-            
-#Print the biggest number
+
+#Display the biggest number
         biggest_number_label.config(text=f"The biggest number is: {biggest_number}")
 
     except ValueError:
         messagebox.showerror("Error", "Please enter valid numbers.")
 
+# Create entry labels and widgets
+        
+# Create button to find the biggest number
+        
+# Create label to display the result
+               
+# Run the Tkinter event loop
 root.mainloop()
