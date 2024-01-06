@@ -48,6 +48,8 @@ number_finder_button = tk.Button(root, text="Find Biggest Number", command=find_
 number_finder_button.grid(row=3, column=0, columnspan=2, pady=10)
 
 # Create label to display the result
+biggest_number_label = tk.Label(root, text="", font=("Times New Roman", 16), foreground="green")
+biggest_number_label.grid(row=4, column=0, columnspan=2, pady=10)
 
 # Run the Tkinter event loop
 root.mainloop()
