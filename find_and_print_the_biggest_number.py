@@ -1,4 +1,5 @@
 #Ask user to input 3 numbers. Find and print the biggest number using only if-else statement.
+import customtkinter
 import tkinter as tk
 from tkinter import messagebox
 
@@ -30,9 +31,11 @@ def adjust_frame_size(event):
     frame_second_number.config(padx=frame_size, pady=frame_size)
     frame_third_number.config(padx=frame_size, pady=frame_size)
 
-root = tk.Tk()
-root.geometry("450x300")
+root = customtkinter.CTk()
+root.geometry("1000x365")
 root.title("Number Finder")
+root.config(bg="#F9F5E7")
+root.resizable(False,False)
 
 frame_first_number = tk.Frame(root, bg="lightblue", padx=20, pady=20)
 frame_first_number.grid(row=1, column=0, padx=10, pady=10)
