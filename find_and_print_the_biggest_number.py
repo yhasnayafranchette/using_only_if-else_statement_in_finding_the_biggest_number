@@ -7,19 +7,24 @@ root.geometry("450x300")
 root.title("Number Finder")
 
 #Input three numbers from the user
-first_number = float(input("Enter the first number: "))
-second_number = float(input("Enter the second number: "))
-third_number = float(input("Enter the third number: "))
-
+def find_and_print_biggest_number():
+    try:
+        first_number = float(entry_first_number.get())
+        second_number = float(entry_second_number.get())
+        third_number = float(entry_third_number.get())
+        
 #Compare the numbers using if-else statement
-if first_number >= second_number and first_number >= third_number:
-    biggest_number = first_number
-elif second_number >= first_number and second_number >= third_number:
-    biggest_number = second_number
-else:
-    biggest_number = third_number
-
+        if first_number >= second_number and first_number >= third_number:
+            biggest_number = first_number
+        elif second_number >= first_number and second_number >= third_number:
+            biggest_number = second_number
+        else:
+            biggest_number = third_number
+            
 #Print the biggest number
-print("The biggest number is:", biggest_number)
+        biggest_number_label.config(text=f"The biggest number is: {biggest_number}")
+
+    except ValueError:
+        messagebox.showerror("Error", "Please enter valid numbers.")
 
 root.mainloop()
