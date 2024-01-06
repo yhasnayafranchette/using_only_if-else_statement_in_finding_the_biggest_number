@@ -31,15 +31,21 @@ def find_and_print_biggest_number():
 frame_first_number = tk.Frame(root, bg="lightblue", padx=20, pady=20)
 frame_first_number.grid(row=0, column=0, padx=10, pady=10, rowspan=3)
 
+# Create a light pink frame for the second number
+frame_second_number = tk.Frame(root, bg="lightpink", padx=20, pady=20)
+frame_second_number.grid(row=0, column=1, padx=10, pady=10)
+
+# Create a light green frame for the third number
+
 # Create entry labels and widgets
 first_number_label = tk.Label(frame_first_number, text="Enter the first number:", font=("Times New Roman", 12))
 first_number_label.grid(row=0, column=0, padx=10, pady=10)
 entry_first_number = tk.Entry(frame_first_number)
 entry_first_number.grid(row=1, column=0, padx=10, pady=10)
 
-second_number_label = tk.Label(root, text="Enter the second number:", font=("Times New Roman", 12))
+second_number_label = tk.Label(frame_second_number, text="Enter the second number:", font=("Times New Roman", 12))
 second_number_label.grid(row=0, column=1, padx=10, pady=10)
-entry_second_number = tk.Entry(root)
+entry_second_number = tk.Entry(frame_second_number)
 entry_second_number.grid(row=1, column=1, padx=10, pady=10)
 
 third_number_label = tk.Label(root, text="Enter the third number:", font=("Times New Roman", 12))
