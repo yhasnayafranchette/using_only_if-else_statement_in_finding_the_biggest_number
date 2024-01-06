@@ -33,6 +33,15 @@ first_number.grid(row=0, column=0, padx=10, pady=10)
 entry_first_number = tk.Entry(root)
 entry_first_number.grid(row=0, column=1, padx=10, pady=10)
 
+second_number = tk.Label(root, text="Enter the second number:", font=("Times New Roman", 12))
+second_number.grid(row=1, column=0, padx=10, pady=10)
+entry_second_number = tk.Entry(root)
+entry_second_number.grid(row=1, column=1, padx=10, pady=10)
+
+third_number = tk.Label(root, text="Enter the third number:", font=("Times New Roman", 12))
+third_number.grid(row=2, column=0, padx=10, pady=10)
+entry_third_number = tk.Entry(root)
+entry_third_number.grid(row=2, column=1, padx=10, pady=10)   
 
 # Create button to find the biggest number
         
