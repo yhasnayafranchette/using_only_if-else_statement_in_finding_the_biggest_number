@@ -12,5 +12,6 @@ elif second_number >= first_number and second_number >= third_number:
     biggest_number = second_number
 else:
     biggest_number = third_number
-     
+
 #Print the biggest number
+print("The biggest number is:", biggest_number)
