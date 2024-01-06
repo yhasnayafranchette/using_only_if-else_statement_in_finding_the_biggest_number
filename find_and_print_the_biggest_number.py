@@ -28,10 +28,15 @@ def find_and_print_biggest_number():
         messagebox.showerror("Error", "Please enter valid numbers.")
 
 # Create entry labels and widgets
-        
+first_number = tk.Label(root, text="Enter the first number:", font=("Times New Roman", 12))
+first_number.grid(row=0, column=0, padx=10, pady=10)
+entry_first_number = tk.Entry(root)
+entry_first_number.grid(row=0, column=1, padx=10, pady=10)
+
+
 # Create button to find the biggest number
         
 # Create label to display the result
-               
+  
 # Run the Tkinter event loop
 root.mainloop()
