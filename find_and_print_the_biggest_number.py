@@ -44,8 +44,10 @@ entry_third_number = tk.Entry(root)
 entry_third_number.grid(row=2, column=1, padx=10, pady=10)   
 
 # Create button to find the biggest number
-        
+number_finder_button = tk.Button(root, text="Find Biggest Number", command=find_and_print_biggest_number)
+number_finder_button.grid(row=3, column=0, columnspan=2, pady=10)
+
 # Create label to display the result
-  
+
 # Run the Tkinter event loop
 root.mainloop()
