@@ -27,21 +27,25 @@ def find_and_print_biggest_number():
     except ValueError:
         messagebox.showerror("Error", "Please enter valid numbers.")
 
-# Create entry labels and widgets
-first_number = tk.Label(root, text="Enter the first number:", font=("Times New Roman", 12))
-first_number.grid(row=0, column=0, padx=10, pady=10)
-entry_first_number = tk.Entry(root)
-entry_first_number.grid(row=0, column=1, padx=10, pady=10)
+# Create a light blue frame for the first number
+frame_first_number = tk.Frame(root, bg="lightblue", padx=20, pady=20)
+frame_first_number.grid(row=0, column=0, padx=10, pady=10, rowspan=3)
 
-second_number = tk.Label(root, text="Enter the second number:", font=("Times New Roman", 12))
-second_number.grid(row=1, column=0, padx=10, pady=10)
+# Create entry labels and widgets
+first_number_label = tk.Label(frame_first_number, text="Enter the first number:", font=("Times New Roman", 12))
+first_number_label.grid(row=0, column=0, padx=10, pady=10)
+entry_first_number = tk.Entry(frame_first_number)
+entry_first_number.grid(row=1, column=0, padx=10, pady=10)
+
+second_number_label = tk.Label(root, text="Enter the second number:", font=("Times New Roman", 12))
+second_number_label.grid(row=0, column=1, padx=10, pady=10)
 entry_second_number = tk.Entry(root)
 entry_second_number.grid(row=1, column=1, padx=10, pady=10)
 
-third_number = tk.Label(root, text="Enter the third number:", font=("Times New Roman", 12))
-third_number.grid(row=2, column=0, padx=10, pady=10)
+third_number_label = tk.Label(root, text="Enter the third number:", font=("Times New Roman", 12))
+third_number_label.grid(row=2, column=1, padx=10, pady=10)
 entry_third_number = tk.Entry(root)
-entry_third_number.grid(row=2, column=1, padx=10, pady=10)   
+entry_third_number.grid(row=3, column=1, padx=10, pady=10)    
 
 # Create button to find the biggest number
 number_finder_button = tk.Button(root, text="Find Biggest Number", command=find_and_print_biggest_number)
