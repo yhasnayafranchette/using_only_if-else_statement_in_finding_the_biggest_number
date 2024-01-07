@@ -36,23 +36,29 @@ root = customtkinter.CTk()
 root.geometry("680x400")
 root.title("Number Finder")
 root.config(bg="#F9F5E7")
-root.resizable(False,False)
+root.resizable(True,True)
 
-# Create frames for each number
-frame_first_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the first number:", font=("Times New Roman", 24), text_color="black", bg_color="#F9F5E7", fg_color="lightblue", width=200, height=200, corner_radius=20,compound=TOP,anchor=N)
-frame_first_number.grid(row=1, column=0, padx=30, pady=70)
+frame_first_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the first number:", font=("Times New Roman", 24),
+                                           text_color="black", bg_color="#F9F5E7", fg_color="lightblue", width=200,
+                                           height=200, corner_radius=20, compound=TOP, anchor=N)
+frame_first_number.grid(row=1, column=0, padx=20, pady=20, sticky=W)
 entry_first_number = tk.Entry(frame_first_number)
-entry_first_number.grid(row=1, column=0, padx=10, pady=10)
+entry_first_number.grid(row=1, column=0, padx=20, pady=20, sticky=W+E)
 
-frame_second_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the first number:", font=("Times New Roman", 24), text_color="black", bg_color="#F9F5E7", fg_color="lightpink", width=200, height=200, corner_radius=20,compound=TOP,anchor=N)
-frame_second_number.grid(row=1, column=1, padx=250, pady=70)
+frame_second_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the second number:",
+                                            font=("Times New Roman", 24), text_color="black", bg_color="#F9F5E7",
+                                            fg_color="lightpink", width=200, height=200, corner_radius=20, compound=TOP,
+                                            anchor=N)
+frame_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W)
 entry_second_number = tk.Entry(frame_second_number)
-entry_second_number.grid(row=1, column=0, padx=10, pady=10)
+entry_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W+E)
 
-frame_third_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the first number:", font=("Times New Roman", 24), text_color="black", bg_color="#F9F5E7", fg_color="lightgreen", width=200, height=200, corner_radius=20,compound=TOP,anchor=N)
-frame_third_number.grid(row=1, column=2, padx=470, pady=70)
+frame_third_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the third number:", font=("Times New Roman", 24),
+                                           text_color="black", bg_color="#F9F5E7", fg_color="lightgreen", width=200,
+                                           height=200, corner_radius=20, compound=TOP, anchor=N)
+frame_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=W)
 entry_third_number = tk.Entry(frame_third_number)
-entry_third_number.grid(row=1, column=0, padx=10, pady=10)    
+entry_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=W+E)   
 
 number_finder_button = tk.Button(root, text="Find Biggest Number", command=find_and_print_biggest_number)
 number_finder_button.grid(row=2, column=0, columnspan=3, pady=10)
