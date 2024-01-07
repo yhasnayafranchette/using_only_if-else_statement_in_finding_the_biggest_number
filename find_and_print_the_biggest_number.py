@@ -25,21 +25,22 @@ def find_and_print_biggest_number():
     except ValueError:
         messagebox.showerror("Number Finder Error", "Please enter valid numbers.")
 
-def adjust_frame_size(event):
 # Adjust frame and label sizes based on window size   
+def adjust_frame_size(event):
     frame_size = min(root.winfo_width(), root.winfo_height()) 
     frame_first_number.config(padx=frame_size, pady=frame_size)
     frame_second_number.config(padx=frame_size, pady=frame_size)
     frame_third_number.config(padx=frame_size, pady=frame_size)
  
 root = customtkinter.CTk()
-root.geometry("985x560")
+root.geometry("985x500")
 root.title("Number Finder")
 root.config(bg="#F9F5E7")
 root.resizable(False,False)
 
+#Create title of the window
 title_label = tk.Label(root, text="Numeric Quest: Uncover the Biggest Digit!", font=("Lucida Calligraphy", 30), bg="#F9F5E7", foreground="#19376D")
-title_label.grid(row=0, column=0, columnspan=3, padx=8, pady=8)
+title_label.grid(row=0, column=0, columnspan=3, padx=8, pady=20)
 
 #Create frames and entry widgets for the three input numbers
 frame_first_number = customtkinter.CTkLabel(root, text=" \n \n Enter the first number:", font=("Times New Roman", 22),
@@ -53,16 +54,16 @@ frame_second_number = customtkinter.CTkLabel(root, text=" \n \n Enter the second
                                             font=("Times New Roman", 22), text_color="black", bg_color="lightpink",
                                             fg_color="lightpink", width=200, height=100, compound=TOP,
                                             anchor=N)
-frame_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W)  # Adjust the sticky value
+frame_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W) 
 entry_second_number = tk.Entry(frame_second_number, bg="white", fg="black", bd=3, width=20, font=("Times New Roman", 18))
-entry_second_number.grid(row=1, column=0, padx=20, pady=20, sticky=W+E)   # Adjust the column to match the lightblue frame
+entry_second_number.grid(row=1, column=0, padx=20, pady=20, sticky=W+E)  
 
 frame_third_number = customtkinter.CTkLabel(root, text=" \n \n Enter the third number:", font=("Times New Roman", 24),
                                            text_color="black", bg_color="lightgreen", fg_color="lightgreen", width=200,
                                            height=100, compound=TOP, anchor=N)
-frame_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=N+S+E+W)  # Adjust the sticky value
+frame_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=N+S+E+W) 
 entry_third_number = tk.Entry(frame_third_number, bg="white", fg="black", bd=3, width=20, font=("Times New Roman", 18))
-entry_third_number.grid(row=1, column=0, padx=20, pady=20, sticky=N+S+E+W)   # Adjust the column to match the lightblue frame
+entry_third_number.grid(row=1, column=0, padx=20, pady=20, sticky=N+S+E+W)  
 
 # Create button to find the biggest number
 number_finder_button = tk.Button(root, text="Find Biggest Number", command=find_and_print_biggest_number, width=15, height=2, font=("Times New Roman", 16), bg="#E0AED0", fg="black")
