@@ -27,7 +27,7 @@ def find_and_print_biggest_number():
 
 def adjust_frame_size(event):
 # Adjust frame and label sizes based on window size   
-    frame_size = min(root.winfo_width(), root.winfo_height()) // 5
+    frame_size = min(root.winfo_width(), root.winfo_height()) 
     frame_first_number.config(padx=frame_size, pady=frame_size)
     frame_second_number.config(padx=frame_size, pady=frame_size)
     frame_third_number.config(padx=frame_size, pady=frame_size)
@@ -42,7 +42,7 @@ frame_first_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the firs
                                            text_color="black", bg_color="#F9F5E7", fg_color="lightblue", width=200,
                                            height=200, corner_radius=20, compound=TOP, anchor=N)
 frame_first_number.grid(row=1, column=0, padx=20, pady=20, sticky=W)
-entry_first_number = tk.Entry(frame_first_number)
+entry_first_number = tk.Entry(frame_first_number, bg="lightblue", fg="blue", bd=3)
 entry_first_number.grid(row=1, column=0, padx=20, pady=20, sticky=W+E)
 
 frame_second_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the second number:",
@@ -50,14 +50,14 @@ frame_second_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the sec
                                             fg_color="lightpink", width=200, height=200, corner_radius=20, compound=TOP,
                                             anchor=N)
 frame_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W)
-entry_second_number = tk.Entry(frame_second_number)
+entry_second_number = tk.Entry(frame_second_number, bg="lightpink", fg="pink", bd=3)
 entry_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W+E)
 
 frame_third_number = customtkinter.CTkLabel(root, text=" \n \n \n Enter the third number:", font=("Times New Roman", 24),
                                            text_color="black", bg_color="#F9F5E7", fg_color="lightgreen", width=200,
                                            height=200, corner_radius=20, compound=TOP, anchor=N)
 frame_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=W)
-entry_third_number = tk.Entry(frame_third_number)
+entry_third_number = tk.Entry(frame_third_number, bg="lightgreen", fg="green", bd=3)
 entry_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=W+E)   
 
 number_finder_button = tk.Button(root, text="Find Biggest Number", command=find_and_print_biggest_number)
