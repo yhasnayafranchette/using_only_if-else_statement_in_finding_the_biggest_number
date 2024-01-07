@@ -26,13 +26,7 @@ def find_and_print_biggest_number():
     except ValueError:
         messagebox.showerror("Numeric Quest Error", "Please enter valid numbers.")
 
-# Adjust frame and label sizes based on window size   
-def adjust_frame_size(event):
-    frame_size = min(root.winfo_width(), root.winfo_height()) 
-    frame_first_number.config(padx=frame_size, pady=frame_size)
-    frame_second_number.config(padx=frame_size, pady=frame_size)
-    frame_third_number.config(padx=frame_size, pady=frame_size)
- 
+#Create the Root Window of Numeric Quest
 root = customtkinter.CTk()
 root.geometry("1050x530")
 root.title("Numeric Quest")
@@ -44,6 +38,12 @@ title_label = tk.Label(root, text="Numeric Quest: Uncover the Biggest Digit!", f
 title_label.grid(row=0, column=0, columnspan=3, padx=8, pady=20)
 
 #Create frames and entry widgets for the three input numbers
+def adjust_frame_size(event):
+    frame_size = min(root.winfo_width(), root.winfo_height()) 
+    frame_first_number.config(padx=frame_size, pady=frame_size)
+    frame_second_number.config(padx=frame_size, pady=frame_size)
+    frame_third_number.config(padx=frame_size, pady=frame_size)
+
 frame_first_number = customtkinter.CTkLabel(root, text=" \n \n Enter the first number:", font=("Century Gothic", 20),
                                         text_color="black", bg_color="lightblue", fg_color="lightblue", width=200,
                                         height=100, compound=TOP, anchor=N)
@@ -66,11 +66,11 @@ frame_third_number.grid(row=1, column=2, padx=20, pady=20, sticky=N+S+E+W)
 entry_third_number = tk.Entry(frame_third_number, bg="white", fg="black", bd=3, width=20, font=("Century Gothic", 18))
 entry_third_number.grid(row=1, column=0, padx=20, pady=20, sticky=N+S+E+W)  
 
-# Create button to find the biggest number
+#Create button to find the biggest number
 number_finder_button = tk.Button(root, text="Find the Biggest Number", command=find_and_print_biggest_number, width=30, height=2, font=("Century Gothic", 16), bg="#E0AED0", fg="black")
 number_finder_button.grid(row=2, column=0, columnspan=3, pady=10)
 
-# Color change in the button if mouse pointer is on it
+#Color change in the button if mouse pointer is on it
 def on_enter(event):
     number_finder_button['background'] = '#A367B1'
 
@@ -80,12 +80,21 @@ def on_leave(event):
 number_finder_button.bind('<Enter>', on_enter)
 number_finder_button.bind('<Leave>', on_leave)
 
-# Create label to display the result
+#Create label to display the result
+def toggle_color(label):
+    current_color = label.cget("foreground")
+    new_color = "#BF3131" if current_color == "#304D30" else "#304D30"
+    label.config(foreground=new_color)
+    root.after(500, lambda: toggle_color(label))  
+
 biggest_number_label = tk.Label(root, text="", font=("Monotype Corsiva", 40), bg="#F9F5E7", foreground="red")
 biggest_number_label.grid(row=3, column=0, columnspan=3, pady=10)
 
-# Bind the resize function to the Configure event of the root window
+#Start the blinking effect for the biggest number label
+toggle_color(biggest_number_label)
+
+#Bind the resize function to the Configure event of the root window
 root.bind("<Configure>", adjust_frame_size)
 
-# Run the Tkinter event loop
+#Run the Tkinter event loop
 root.mainloop()
