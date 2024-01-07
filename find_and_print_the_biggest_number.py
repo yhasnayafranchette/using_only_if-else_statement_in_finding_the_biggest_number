@@ -3,6 +3,7 @@ import customtkinter
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
+import tkinter.ttk as ttk
 
 #Input three numbers from the user
 def find_and_print_biggest_number():
@@ -68,6 +69,16 @@ entry_third_number.grid(row=1, column=0, padx=20, pady=20, sticky=N+S+E+W)
 # Create button to find the biggest number
 number_finder_button = tk.Button(root, text="Find the Biggest Number", command=find_and_print_biggest_number, width=30, height=2, font=("Century Gothic", 16), bg="#E0AED0", fg="black")
 number_finder_button.grid(row=2, column=0, columnspan=3, pady=10)
+
+# Color change in the button if mouse pointer is on it
+def on_enter(event):
+    number_finder_button['background'] = '#A367B1'
+
+def on_leave(event):
+    number_finder_button['background'] = '#E0AED0'
+
+number_finder_button.bind('<Enter>', on_enter)
+number_finder_button.bind('<Leave>', on_leave)
 
 # Create label to display the result
 biggest_number_label = tk.Label(root, text="", font=("Monotype Corsiva", 40), bg="#F9F5E7", foreground="red")
