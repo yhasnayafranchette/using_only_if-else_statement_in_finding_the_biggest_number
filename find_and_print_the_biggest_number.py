@@ -43,7 +43,7 @@ title_label = tk.Label(root, text="Numeric Quest: Uncover the Biggest Digit!", f
 title_label.grid(row=0, column=0, columnspan=3, padx=8, pady=20)
 
 #Create frames and entry widgets for the three input numbers
-frame_first_number = customtkinter.CTkLabel(root, text=" \n \n Enter the first number:", font=("Times New Roman", 22),
+frame_first_number = customtkinter.CTkLabel(root, text=" \n \n Enter the first number:", font=("Times New Roman", 24),
                                         text_color="black", bg_color="lightblue", fg_color="lightblue", width=200,
                                         height=100, compound=TOP, anchor=N)
 frame_first_number.grid(row=1, column=0, padx=20, pady=20, sticky=W)
@@ -51,7 +51,7 @@ entry_first_number = tk.Entry(frame_first_number, bg="white", fg="black", bd=3, 
 entry_first_number.grid(row=1, column=0, padx=20, pady=20, sticky=W+E)
 
 frame_second_number = customtkinter.CTkLabel(root, text=" \n \n Enter the second number:",
-                                            font=("Times New Roman", 22), text_color="black", bg_color="lightpink",
+                                            font=("Times New Roman", 24), text_color="black", bg_color="lightpink",
                                             fg_color="lightpink", width=200, height=100, compound=TOP,
                                             anchor=N)
 frame_second_number.grid(row=1, column=1, padx=20, pady=20, sticky=W) 
